@@ -32,9 +32,10 @@
 
 
     <div v-bind:key="emp.id" v-for="emp in employees">
-      <b>Id</b>: {{emp.id}},<br/>
-      <b>Name</b>: {{emp.name}},<br/>
-      <b>Salary</b>: {{emp.Salary}},<br/><br/><br/>
+      <b>studentId</b>: {{emp.studentId}},<br/>
+      <b>firstname</b>: {{emp.firstname}},<br/>
+      <b>lastName</b>: {{emp.lastName}},<br/>
+      <b>score</b>: {{emp.score}},<br/><br/><br/>
       </div>
 
     
@@ -63,7 +64,10 @@ export default {
       counter: 0,
       htmText: "student",
       isGreeting: true,
-      employees:[{"id":1,"name":"John","Salary":30000},{"id":2,"name":"Trump","Salary":10000},{"id":3,"name":"Peter","Salary":99000}]
+      employees:[{"studentId":624235032,"firstname":"nattawut","lastName":"bunwisoot","score":10},
+                  {"studentId":624235000,"firstname":"kavid","lastName":"rober","score":7},
+                  {"studentId":624235001,"firstname":"robert","lastName":"lewandowski","score":9},
+                  {"studentId":624235002,"firstname":"lionel","lastName":"messi","score":10}]
 
 
     }
