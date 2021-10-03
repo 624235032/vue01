@@ -33,9 +33,13 @@
 
     <div v-bind:key="emp.id" v-for="emp in employees">
       <b>studentId</b>: {{emp.studentId}},<br/>
-      <b>firstname</b>: {{emp.firstname}},<br/>
+      <b>firstname</b>: <span v-bind:class="(emp.salary>=90000) ? 'high' : (emp.salary>=30000) ? 'medium' : 'low'">{{emp.firstname}}</span>,<br/>
       <b>lastName</b>: {{emp.lastName}},<br/>
-      <b>score</b>: {{emp.score}},<br/><br/><br/>
+      <b>salary</b>: {{emp.salary}}
+      <span v-if="emp.salary>90000">***</span>
+      <span v-else-if="emp.salary>=30000">**</span>
+      <span v-else>*</span>
+      <br/><br/><br/>
       </div>
 
     
@@ -64,10 +68,10 @@ export default {
       counter: 0,
       htmText: "student",
       isGreeting: true,
-      employees:[{"studentId":624235032,"firstname":"nattawut","lastName":"bunwisoot","score":10},
-                  {"studentId":624235000,"firstname":"kavid","lastName":"rober","score":7},
-                  {"studentId":624235001,"firstname":"robert","lastName":"lewandowski","score":9},
-                  {"studentId":624235002,"firstname":"lionel","lastName":"messi","score":10}]
+      employees:[{"studentId":624235032,"firstname":"nattawut","lastName":"bunwisoot","salary":8000},
+                  {"studentId":624235000,"firstname":"kavid","lastName":"rober","salary":90000},
+                  {"studentId":624235001,"firstname":"robert","lastName":"lewandowski","salary":70000},
+                  {"studentId":624235002,"firstname":"lionel","lastName":"messi","salary":100000}]
 
 
     }
@@ -93,4 +97,14 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+.high{
+  color: darkred;
+}
+.medium{
+  color: blue;
+}
+.low{
+  color: green;
+}
+
 </style>
